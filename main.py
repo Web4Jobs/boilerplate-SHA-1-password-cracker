@@ -1,3 +1,6 @@
+import capture_results  # ✅ new
+capture_results.start()  # ✅ new (start capture)
+
 # This entrypoint file to be used in development. Start by reading README.md
 import password_cracker
 from unittest import main
@@ -11,4 +14,5 @@ cracked_password2 = password_cracker.crack_sha1_hash(
 print(cracked_password2)
 
 # Run unit tests automatically
-main(module = "test_module", exit = False)
+program = main(module="test_module", exit=False)  # ✅ new: capture program
+capture_results.finish(program)                  # ✅ new: write results
